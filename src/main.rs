@@ -7,6 +7,9 @@ async fn add(Path((a, b)): Path<(u32, u32)>) -> String {
 async fn mult(Path((a, b)): Path<(u32, u32)>) -> String {
     (a * b).to_string()
 }
+ async fn uuid() -> String {
+     uuid::Uuid::new_v4().to_string()
+ }
 
 #[tokio::main]
 async fn main() {
